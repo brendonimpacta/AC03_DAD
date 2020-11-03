@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Aluno</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}"/>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Editar Aluno {{aluno.nomeAluno}}</h1>
+        <form action="/edit/{{aluno.id}}" method="POST">
+            <table class="table table-striped">
+                <tr>
+                    <td>Digite o RA</td>
+                    <td><input type="text" name="ra" value="{{aluno.ra}}" placeholder="Digite o RA"/></td>
+                </tr>
+                <tr>
+                    <td>Digite o nome</td>
+                    <td><input type="text" name="nomeAluno" value="{{aluno.nomeAluno}}" placeholder="Digite nome Aluno"/></td>
+                </tr>
+                <tr>
+                    <td>Digite o e-mail</td>
+                    <td><input type="text" name="emailAluno" value="{{aluno.emailAluno}}" placeholder="Email do aluno"/></td>
+                </tr>
+                <tr>
+                    <td>Digite o logradouro</td>
+                    <td><input type="text" name="logradouro" value="{{aluno.logradouro}}" placeholder="Logradouro"/></td>
+                </tr>
+                <tr>
+                    <td>Digite o número</td>
+                    <td><input type="text" name="numero" value="{{aluno.numero}}" placeholder="Numero"/></td>
+                </tr>
+                <tr>
+                    <td>Digite o CEP</td>
+                    <td><input type="text" name="cep" value="{{aluno.cep}}" placeholder="CEP"/></td>
+                </tr>
+                <tr>
+                    <td>Digite o complemento</td>
+                    <td><input type="text" name="complemento" value="{{aluno.complemento}}" placeholder="Complemento"/></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">
+                    <input type="submit" value="Enviar"/>
+                </th>
+            </table>
+        </div>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Aluno</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}"/>
+        </head>
+        <body>
+            <div class="container">
+            <h1>CRUD - Aluno</h1>
+            <a href="/add"><img src="{{ url_for('static', filename='images/adicionar-ficheiro.png')}}"></a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>RA do Aluno</th>
+                        <th>Nome Aluno</th>
+                        <th>Email do Aluno</th>
+                        <th>Logradouro</th>
+                        <th>Numero</th>
+                        <th>CEP</th>
+                        <th>Complemento</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in alunos %}
+                    <tr>
+                        <td>{{a.ra}}</td>
+                        <td>{{a.nomeAluno}}</td>
+                        <td>{{a.emailAluno}}</td>
+                        <td>{{a.logradouro}}</td>
+                        <td>{{a.numero}}</td>
+                        <td>{{a.cep}}</td>
+                        <td>{{a.complemento}}</td>
+
+                        <td>
+                            <a href="/edit/{{a.id}}"><img src="{{ url_for('static', filename='images/editar.png')}}"></a>
+                            <a href="/delete/{{a.id}}"><img src="{{ url_for('static', filename='images/lixo.png')}}"></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+            <script scr="{{ url_for('static', filename='js/bootstrap.min.js')}}">
+            </script>
+        </body>
+</html>
